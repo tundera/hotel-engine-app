@@ -2,7 +2,7 @@ import React from "react"
 
 import { Select, Option } from "@reflexjs/ui"
 
-const SearchFilter = () => {
+const Filter = () => {
   return (
     <Select defaultValue="Hello" maxWidth="200px" m="2">
       <Option>Repos</Option>
@@ -13,4 +13,4 @@ const SearchFilter = () => {
   )
 }
 
-export default SearchFilter
+export default Filter

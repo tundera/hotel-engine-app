@@ -61,6 +61,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "gatsby clean && gatsby develop",
+    "prebuild": "yarn generate",
     "build": "gatsby build",
     "start": "gatsby serve",
     "generate": "gqless generate",

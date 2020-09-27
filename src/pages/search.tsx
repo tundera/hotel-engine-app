@@ -1,19 +1,24 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useInput } from "react-hanger"
 import axios from "axios"
 
 import { Link } from "gatsby"
 import { H1, Input, Flexbox, Container } from "@reflexjs/ui"
-import SearchFilter from "../components/SearchFilter"
+import Filter from "../components/Filter"
 import Button from "../components/Button"
 import Layout from "../layouts/Layout"
 import SEO from "../components/seo"
-import SearchResults from "../components/SearchResults"
+import SearchResults, { SearchFilterKey } from "../components/Results"
 
 const SearchPage = () => {
   // const cache = useQueryCache()
   const newSearch = useInput("")
   const [input, setInput] = useState("")
+  const [filters, setFilters] = useState<SearchFilterKey[]>([
+    "REPOSITORY",
+    "ISSUE",
+    "USER",
+  ])
 
   const handleSearch = async () => {
     setInput(newSearch.value)
@@ -24,7 +29,7 @@ const SearchPage = () => {
       {/* <SEO title="Search" /> */}
       <Container>
         <H1>GitHub Search</H1>
-        <SearchFilter />
+        <Filter />
         <Flexbox py="4" justifyContent="space-around">
           <Input
             type="text"
@@ -37,7 +42,7 @@ const SearchPage = () => {
             Search
           </Button>
         </Flexbox>{" "}
-        <SearchResults input={input} />
+        <SearchResults input={input} filters={filters} />
         <Link to="/">Go back to the homepage</Link>
       </Container>
     </Layout>
