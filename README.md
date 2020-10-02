@@ -10,4 +10,4 @@ Search public and private GitHub repos. This app is built with Gatsby, Vercel, a
 
 1. Run `yarn dev`
 
-> Note if you use OSX, you can add breakpoints hit `F5` while running `yarn dev` to debug client- and server-side code
+> Note if you use OSX, you can add breakpoints in VSCode for debugging. Just hit `F5` while running `yarn dev` to debug client and server-side code within VSCode.
